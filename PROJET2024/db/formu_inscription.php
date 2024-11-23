@@ -21,9 +21,9 @@ Formulaire d'inscription</br><br>
     
     <input type="radio" name="mode" id="2" value="2" required />
     <label for="2">Non-editeur</label><br>
-<label for="courriel">Votre adresse courriel </label> : <input type="email" name="courriel" value="exemple@gmail.com" /></br><br>
-<input type="submit" value="Envoyer" /> 
-</form><a href="formu.php" class="bouton">je souhaite me connecter</a> 
+    <label for="courriel">Votre adresse courriel </label> : <input type="email" name="courriel" value="exemple@gmail.com" /></br><br>
+    <input type="submit" value="Envoyer" /> 
+    </form><a href="formu.php" class="bouton">je souhaite me connecter</a> 
 
 
   

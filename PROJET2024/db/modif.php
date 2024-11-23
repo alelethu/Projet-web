@@ -10,7 +10,6 @@
         <table id="tableau_etiquette">
             <thead>
                 <tr>
-                    <th>Utilisateur</th>
                     <th>Etiquette</th>
                     <th>Points</th>
                     <th>Description</th>
@@ -18,15 +17,16 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" name="pseudo" placeholder="Nom d'utilisateur"/></td>  
-                    <td><input type="text" name="nom_etiquette" placeholder="Nom de l'étiquette"/></td>
-                    <td><label for="positions_points">Position des points</label> : <p id = "positionPoint" name="position_points"></p></td>
-                    <td><input type="text" name="description" placeholder="Description"/></td>
+                    <form  method="post" action="recup_modif.php">
+                    <td><input type="text" name="nom_etiquette" placeholder="Nom de l'étiquette" required /></td>
+                    <td><label >Position des points</label> : <p id = "positionPoint" name="position_points"></p></td>
+                    <td><input type="text" name="description" placeholder="Description" /></td>
+                    <td><input type="hidden" id="hiddenPoints" name="coord"></td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="4" style="text-align: center;"><input id="boutton_envoyer" type="submit" name="Envoyer"></td>
+                    <td colspan="4" style="text-align: center;"><input id="boutton_envoyer" type="submit" name="Envoyer" value="Valider"></td></form>
                 </tr>
             </tfoot>
         </table>

@@ -18,7 +18,6 @@ $login = $_POST['pseudo'];
 
 
 
-
 // Préparation de la requête 
 $statement = $connexion->prepare("INSERT INTO useraccount (userRoleId, login, firstname, lastname, email, password) VALUES (?, ?, ?, ?, ?, ?)");
 

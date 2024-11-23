@@ -28,10 +28,13 @@ const dessinerPoints = (x, y) => {
 }
 
 const positionPoint = document.getElementById("positionPoint");
+const hiddenPositionPoints = document.getElementById("hiddenPoints");
 
 // Fonction pour afficher les coordonnées des points
 const afficherCoordonnees = () => {
-    positionPoint.textContent = points.join("; ")
+    positionPoint.textContent = points.join(":");
+    hiddenPositionPoints.value = points.join(":");
+    console.log(hiddenPositionPoints.value);
 };
 
 canvas.addEventListener("click", evt => {

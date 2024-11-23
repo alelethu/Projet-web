@@ -15,7 +15,7 @@ $login = $_POST['pseudo'];
 
 
 // Préparation de la requête 
-$statement = $connexion->prepare("SELECT password FROM useraccount WHERE login = ?");
+$statement = $connexion->prepare("SELECT id,userRoleId,password FROM useraccount WHERE login = ?");
 
 // Lier les valeurs aux points d'interrogation dans la requête
 $statement->bind_param("s", $login);
@@ -28,12 +28,12 @@ $result = $statement->get_result();
 $row = $result->fetch_assoc();
 
 if ($row) {
-    // Vérifie le mot de passe avec le hachage stocké
+    // Vérifie le mot de passe avec le hachage 
     if (password_verify($password, $row['password'])) {
-        echo "good";
         $_SESSION['conn'] = true;
-        $_SESSION['pseudo'] = $login;
-        header("Location: home.php");
+        $_SESSION['utilisateur'] = $row['id'];
+        $_SESSION['role'] = $row['userRoleId'];
+        header("Location: accueil.php");
          exit; // Connexion réussie
     } else {
         echo "mot de passe incorrect";
